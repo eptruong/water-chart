@@ -360,12 +360,20 @@ function renderCard(w, rank) {
       const cards = contaminants.map(i => {
         const amt = i.amount != null ? i.amount : '—';
         const unit = i.measure || '';
-        const overLimit = i.limit != null && i.amount != null && i.amount > i.limit;
-        const ratio = (i.limit != null && i.amount != null && i.limit > 0) ? (i.amount / i.limit) : null;
+        // Use health guideline first (stricter), fall back to legal limit — matches Oasis
+        const hLimit = i.healthGuideline || i.limit;
+        const overLimit = hLimit != null && i.amount != null && i.amount > hLimit;
+        const ratio = (hLimit != null && i.amount != null && hLimit > 0) ? (i.amount / hLimit) : null;
+        const riskCount = i.riskCount || 0;
         let badge = '';
-        if (overLimit && ratio) badge = `<span class="risk-badge danger">${ratio.toFixed(1)}x limit</span>`;
-        else if (i.limit != null && i.amount != null && ratio && ratio > 0.5) badge = `<span class="risk-badge warning">${Math.round(ratio * 100)}% of limit</span>`;
-        else if (i.limit != null && i.amount != null) badge = `<span class="risk-badge safe">Within limit</span>`;
+        if (overLimit && ratio) {
+          const mult = Math.round(ratio);
+          badge = `<span class="risk-badge danger">${mult > 0 ? mult : 1}x limit</span>`;
+        } else if (riskCount > 0) {
+          badge = `<span class="risk-badge warning">${riskCount} risk${riskCount > 1 ? 's' : ''}</span>`;
+        } else if (hLimit != null && i.amount != null) {
+          badge = `<span class="risk-badge safe">Within limit</span>`;
+        }
         const desc = i.desc ? `<div class="ing-card-desc">${i.desc}</div>` : '';
         return `<div class="ing-card${overLimit ? ' over-limit' : ''}">
           <div class="ing-card-header"><div><div class="ing-card-name">${i.name}</div><div class="ing-card-cat">${i.category || ''}</div></div><div style="text-align:right"><div class="ing-card-amount">${amt} ${unit}</div>${badge}</div></div>
