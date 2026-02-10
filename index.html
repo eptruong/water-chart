@@ -328,11 +328,14 @@ function renderCard(w, rank) {
       const rows = items.map(i => {
         const amt = i.amount != null ? i.amount : '—';
         const unit = i.measure || '';
-        const limit = i.limit != null ? i.limit + ' ' + unit : '—';
+        const limitVal = i.limit != null ? i.limit + ' ' + unit : '—';
+        const limitLabel = i.limitType === 'Health' ? ' <span class="cat" title="Health guideline (stricter than legal)">⚕️</span>' : '';
         const overClass = (i.limit != null && i.amount != null && i.amount > i.limit) ? 'over-limit' : (i.is_beneficial ? 'beneficial' : 'safe');
-        return `<tr><td>${i.name} <span class="cat">${i.category || ''}</span></td><td class="${overClass}">${amt} ${unit}</td><td>${limit}</td></tr>`;
+        const overBadge = (i.limit != null && i.amount != null && i.amount > i.limit) ? ' ⛔' : (i.limit != null && i.amount != null && i.amount > i.limit * 0.5) ? ' ⚠️' : '';
+        const sevDots = i.severity ? '🔴'.repeat(Math.min(i.severity, 5)) : '';
+        return `<tr><td>${i.name} <span class="cat">${i.category || ''}</span></td><td class="${overClass}">${amt} ${unit}${overBadge}</td><td>${limitVal}${limitLabel}</td></tr>`;
       }).join('');
-      return `<div class="detail-section"><h4>${icon} ${title}</h4><table class="contaminant-table"><thead><tr><th>Substance</th><th>Amount</th><th>Legal Limit</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+      return `<div class="detail-section"><h4>${icon} ${title}</h4><table class="contaminant-table"><thead><tr><th>Substance</th><th>Amount</th><th>Limit</th></tr></thead><tbody>${rows}</tbody></table></div>`;
     }
 
     ingredientsHtml = makeTable(contaminants, 'Contaminants Found', '⚠️') + makeTable(minerals, 'Minerals', '💎') + makeTable(other, 'Other', '📋');
