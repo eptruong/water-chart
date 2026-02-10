@@ -34,6 +34,8 @@ h1{font-size:1.8rem;text-align:center;color:#fff;margin-bottom:4px}
 .card.poor{border-left:3px solid #f97316}
 .card.bad{border-left:3px solid #f87171}
 .rank-num{font-size:1rem;font-weight:800;min-width:28px;text-align:center;color:#555}
+.product-img{width:42px;height:42px;border-radius:8px;object-fit:cover;flex-shrink:0;background:#1a1a2e}
+.product-img.hidden{display:none}
 .score-ring{position:relative;width:46px;height:46px;flex-shrink:0}
 .score-ring svg{transform:rotate(-90deg)}
 .score-ring circle{fill:none;stroke-width:4.5}
@@ -267,8 +269,8 @@ function renderCard(w, rank) {
   if (w.tds != null) details.push({val: w.tds + ' ppm', lbl: 'TDS', color: '#fff'});
   if (w.fluoride != null) details.push({val: w.fluoride + ' ppm', lbl: 'Fluoride', color: w.fluoride === 0 ? '#4ade80' : w.fluoride < 0.5 ? '#fbbf24' : '#f87171'});
   if (w.pfas) details.push({val: w.pfas === 'No' ? '✅ None' : '⚠️ ' + w.pfas, lbl: 'PFAS', color: w.pfas === 'No' ? '#4ade80' : '#f87171'});
-  if (w.capMaterial) details.push({val: w.capMaterial.replace(/_/g, ' '), lbl: 'Cap Material', color: '#999'});
-  if (w.treatment && w.treatment !== 'Unknown') details.push({val: w.treatment.replace(/_/g, ' '), lbl: 'Treatment', color: '#999'});
+  if (w.capMaterial) details.push({val: String(w.capMaterial).replace(/_/g, ' '), lbl: 'Cap Material', color: '#999'});
+  if (w.treatment && String(w.treatment) !== 'Unknown') details.push({val: String(w.treatment).replace(/_/g, ' '), lbl: 'Treatment', color: '#999'});
   if (w.certifiedNoPlastic === 'true') details.push({val: '✅ Yes', lbl: 'No-Plastic Cert', color: '#4ade80'});
 
   const detailHtml = details.length ? `<div class="detail-grid">${details.map(d =>
@@ -277,8 +279,11 @@ function renderCard(w, rank) {
 
   const sourceHtml = w.source ? `<div class="detail-source"><strong>Source:</strong> ${w.source}</div>` : '';
 
+  const imgHtml = w.imageUrl ? `<img class="product-img" src="${w.imageUrl}" alt="" loading="lazy" onerror="this.classList.add('hidden')">` : '';
+
   return `<div class="card ${g}" data-id="${w.id}" onclick="toggleDetail(${w.id})">
     <div class="rank-num">${rank}</div>
+    ${imgHtml}
     <div class="score-ring">
       <svg width="46" height="46" viewBox="0 0 46 46">
         <circle class="bg" cx="23" cy="23" r="19"/>
@@ -296,6 +301,7 @@ function renderCard(w, rank) {
     </div>
   </div>
   <div class="detail-panel" id="detail-${w.id}">
+    ${w.imageUrl ? `<div style="text-align:center;margin-bottom:10px"><img src="${w.imageUrl}" alt="${w.name}" style="max-height:120px;border-radius:10px;object-fit:contain" loading="lazy"></div>` : ''}
     ${detailHtml}
     ${sourceHtml}
   </div>`;
