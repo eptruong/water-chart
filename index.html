@@ -70,6 +70,24 @@ h1{font-size:1.8rem;text-align:center;color:#fff;margin-bottom:4px}
 .detail-box .lbl{font-size:.65rem;color:#666;margin-top:2px}
 .detail-source{font-size:.75rem;color:#888;margin-top:10px;line-height:1.5}
 .detail-source strong{color:#bbb}
+.detail-section{margin-top:14px}
+.detail-section h4{font-size:.78rem;color:#bbb;margin-bottom:8px;border-bottom:1px solid #1e1e2e;padding-bottom:5px}
+.contaminant-table{width:100%;border-collapse:collapse;font-size:.72rem}
+.contaminant-table th{text-align:left;color:#666;padding:4px 8px;border-bottom:1px solid #1e1e2e;font-weight:600}
+.contaminant-table td{padding:4px 8px;border-bottom:1px solid #111;color:#ccc}
+.contaminant-table tr:hover{background:#1a1a2e}
+.contaminant-table .cat{color:#888;font-size:.65rem}
+.contaminant-table .over-limit{color:#f87171;font-weight:700}
+.contaminant-table .safe{color:#4ade80}
+.contaminant-table .beneficial{color:#60a5fa}
+.score-bar-wrap{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.score-bar-label{font-size:.72rem;color:#999;min-width:100px}
+.score-bar{flex:1;height:8px;border-radius:4px;background:#1e1e2e;overflow:hidden}
+.score-bar-fill{height:100%;border-radius:4px;transition:width .3s}
+.score-bar-val{font-size:.72rem;color:#fff;font-weight:600;min-width:40px;text-align:right}
+.source-link{display:inline-block;margin:4px 6px 4px 0;padding:4px 10px;background:#1a1a2e;border:1px solid #2a2a3e;border-radius:6px;color:#60a5fa;font-size:.72rem;text-decoration:none;transition:.2s}
+.source-link:hover{background:#1a2a4e;border-color:#3b82f6}
+.desc-text{font-size:.75rem;color:#888;line-height:1.5;margin-bottom:10px;font-style:italic}
 .empty{text-align:center;color:#555;padding:40px;font-size:.9rem}
 .load-more{display:block;width:100%;padding:12px;background:#14141f;border:1px solid #2a2a3e;border-radius:10px;color:#60a5fa;font-size:.85rem;cursor:pointer;text-align:center;margin-top:10px}
 .load-more:hover{background:#1a2a4e;border-color:#3b82f6}
@@ -141,6 +159,7 @@ let openId = null;
 
 const typeLabels = {
   bottled_water: 'Bottled Water',
+  sparkling_water: 'Sparkling',
   flavored_water: 'Flavored',
   water_gallon: 'Gallon Jug',
   mineral_packets: 'Mineral Packets',
@@ -263,21 +282,79 @@ function renderCard(w, rank) {
   if (w.fluoride != null) metaItems.push(`F⁻ <span>${w.fluoride}ppm</span>`);
   const metaHtml = metaItems.length ? `<div class="meta-row">${metaItems.map(m=>`<div class="meta-item">${m}</div>`).join('')}</div>` : '';
 
-  // Detail panel
+  // Quick overview boxes
   const details = [];
   if (w.ph != null) details.push({val: w.ph, lbl: 'pH Level', color: w.ph >= 7 ? '#60a5fa' : '#fbbf24'});
   if (w.tds != null) details.push({val: w.tds + ' ppm', lbl: 'TDS', color: '#fff'});
   if (w.fluoride != null) details.push({val: w.fluoride + ' ppm', lbl: 'Fluoride', color: w.fluoride === 0 ? '#4ade80' : w.fluoride < 0.5 ? '#fbbf24' : '#f87171'});
   if (w.pfas) details.push({val: w.pfas === 'No' ? '✅ None' : '⚠️ ' + w.pfas, lbl: 'PFAS', color: w.pfas === 'No' ? '#4ade80' : '#f87171'});
   if (w.capMaterial) details.push({val: String(w.capMaterial).replace(/_/g, ' '), lbl: 'Cap Material', color: '#999'});
-  if (w.treatment && String(w.treatment) !== 'Unknown') details.push({val: String(w.treatment).replace(/_/g, ' '), lbl: 'Treatment', color: '#999'});
+  if (w.filtration && w.filtration !== 'Unknown') details.push({val: String(w.filtration), lbl: 'Filtration', color: '#999'});
   if (w.certifiedNoPlastic === 'true') details.push({val: '✅ Yes', lbl: 'No-Plastic Cert', color: '#4ade80'});
+  if (w.isPfasTested) details.push({val: '✅ Tested', lbl: 'PFAS Tested', color: '#4ade80'});
+  if (w.isMicroplasticsTested) details.push({val: '✅ Tested', lbl: 'Microplastics', color: '#4ade80'});
 
-  const detailHtml = details.length ? `<div class="detail-grid">${details.map(d =>
+  const overviewHtml = details.length ? `<div class="detail-grid">${details.map(d =>
     `<div class="detail-box"><div class="val" style="color:${d.color}">${d.val}</div><div class="lbl">${d.lbl}</div></div>`
-  ).join('')}</div>` : '<div style="color:#555;font-size:.8rem">No detailed data available for this product.</div>';
+  ).join('')}</div>` : '';
 
-  const sourceHtml = w.source ? `<div class="detail-source"><strong>Source:</strong> ${w.source}</div>` : '';
+  // Description
+  const descHtml = w.description ? `<div class="desc-text">${w.description}</div>` : '';
+
+  // Score Breakdown bars
+  let breakdownHtml = '';
+  if (w.scoreBreakdown && w.scoreBreakdown.length) {
+    const bars = w.scoreBreakdown.map(sb => {
+      const pct = sb.max > 0 ? (sb.score / sb.max) * 100 : 0;
+      const barColor = pct >= 80 ? '#4ade80' : pct >= 50 ? '#fbbf24' : '#f87171';
+      return `<div class="score-bar-wrap" title="${sb.description || ''}">
+        <div class="score-bar-label">${sb.label}</div>
+        <div class="score-bar"><div class="score-bar-fill" style="width:${pct}%;background:${barColor}"></div></div>
+        <div class="score-bar-val">${sb.score}/${sb.max}</div>
+      </div>`;
+    }).join('');
+    breakdownHtml = `<div class="detail-section"><h4>📊 Score Breakdown</h4>${bars}</div>`;
+  }
+
+  // Ingredients / Contaminants table
+  let ingredientsHtml = '';
+  if (w.ingredients && w.ingredients.length) {
+    const contaminants = w.ingredients.filter(i => i.category && !['Minerals','Other'].includes(i.category));
+    const minerals = w.ingredients.filter(i => i.category === 'Minerals');
+    const other = w.ingredients.filter(i => !i.category || i.category === 'Other');
+
+    function makeTable(items, title, icon) {
+      if (!items.length) return '';
+      const rows = items.map(i => {
+        const amt = i.amount != null ? i.amount : '—';
+        const unit = i.measure || '';
+        const limit = i.limit != null ? i.limit + ' ' + unit : '—';
+        const overClass = (i.limit != null && i.amount != null && i.amount > i.limit) ? 'over-limit' : (i.is_beneficial ? 'beneficial' : 'safe');
+        return `<tr><td>${i.name} <span class="cat">${i.category || ''}</span></td><td class="${overClass}">${amt} ${unit}</td><td>${limit}</td></tr>`;
+      }).join('');
+      return `<div class="detail-section"><h4>${icon} ${title}</h4><table class="contaminant-table"><thead><tr><th>Substance</th><th>Amount</th><th>Legal Limit</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+    }
+
+    ingredientsHtml = makeTable(contaminants, 'Contaminants Found', '⚠️') + makeTable(minerals, 'Minerals', '💎') + makeTable(other, 'Other', '📋');
+  }
+
+  // Sources / Lab reports
+  let sourcesHtml = '';
+  if (w.sources && w.sources.length) {
+    const links = w.sources.map(s =>
+      `<a href="${s.url}" class="source-link" target="_blank" rel="noopener">📄 ${s.label || 'Lab Report'}</a>`
+    ).join('');
+    sourcesHtml = `<div class="detail-section"><h4>🔬 Sources & Lab Reports</h4>${links}</div>`;
+  }
+
+  // Water source info
+  const sourceLocHtml = w.source ? `<div class="detail-source"><strong>📍 Water Source:</strong> ${w.source}${w.waterSource ? ' (' + w.waterSource.replace(/_/g, ' ') + ')' : ''}</div>` : (w.waterSource ? `<div class="detail-source"><strong>📍 Source Type:</strong> ${w.waterSource.replace(/_/g, ' ')}</div>` : '');
+
+  // Treatment info
+  const treatmentHtml = w.treatment && w.treatment !== 'Unknown' ? `<div class="detail-source"><strong>⚙️ Treatment:</strong> ${w.treatment}</div>` : '';
+
+  const hasAnyDetail = details.length || w.scoreBreakdown || (w.ingredients && w.ingredients.length) || (w.sources && w.sources.length) || w.source || w.description;
+  const noDataHtml = !hasAnyDetail ? '<div style="color:#555;font-size:.8rem;text-align:center;padding:20px">No detailed data available for this product yet.</div>' : '';
 
   const imgHtml = w.imageUrl ? `<img class="product-img" src="${w.imageUrl}" alt="" loading="lazy" onerror="this.classList.add('hidden')">` : '';
 
@@ -301,9 +378,15 @@ function renderCard(w, rank) {
     </div>
   </div>
   <div class="detail-panel" id="detail-${w.id}">
-    ${w.imageUrl ? `<div style="text-align:center;margin-bottom:10px"><img src="${w.imageUrl}" alt="${w.name}" style="max-height:120px;border-radius:10px;object-fit:contain" loading="lazy"></div>` : ''}
-    ${detailHtml}
-    ${sourceHtml}
+    ${w.imageUrl ? `<div style="text-align:center;margin-bottom:12px"><img src="${w.imageUrl}" alt="${w.name}" style="max-height:140px;border-radius:10px;object-fit:contain" loading="lazy"></div>` : ''}
+    ${descHtml}
+    ${overviewHtml}
+    ${breakdownHtml}
+    ${ingredientsHtml}
+    ${sourceLocHtml}
+    ${treatmentHtml}
+    ${sourcesHtml}
+    ${noDataHtml}
   </div>`;
 }
 
