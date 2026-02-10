@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Water Quality Rankings — Oasis Health Scores</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0a0a0f;color:#e0e0e0;padding:20px;max-width:1000px;margin:0 auto}
+h1{font-size:1.8rem;text-align:center;color:#fff;margin-bottom:4px}
+.subtitle{text-align:center;color:#666;font-size:.85rem;margin-bottom:20px}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;align-items:center}
+.search{flex:1;min-width:200px;padding:10px 16px;border-radius:10px;border:1px solid #2a2a3e;background:#14141f;color:#fff;font-size:.95rem;outline:none}
+.search:focus{border-color:#3b82f6}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filter-btn{padding:6px 14px;border-radius:20px;border:1px solid #2a2a3e;background:#14141f;color:#888;font-size:.78rem;cursor:pointer;transition:.2s}
+.filter-btn:hover,.filter-btn.active{background:#1a2a4e;border-color:#3b82f6;color:#60a5fa}
+.stats{display:flex;gap:16px;justify-content:center;margin-bottom:20px;flex-wrap:wrap}
+.stat{background:#14141f;border:1px solid #1e1e2e;border-radius:10px;padding:10px 18px;text-align:center}
+.stat-num{font-size:1.4rem;font-weight:800;color:#fff}
+.stat-label{font-size:.7rem;color:#666;margin-top:2px}
+.legend{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;font-size:.78rem}
+.legend-item{display:flex;align-items:center;gap:5px}
+.legend-dot{width:10px;height:10px;border-radius:50%}
+.grid{display:grid;gap:10px}
+.card{background:#14141f;border:1px solid #1e1e2e;border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:14px;transition:.15s;cursor:default}
+.card:hover{transform:translateX(3px);border-color:#2a2a4e}
+.card.excellent{border-left:3px solid #4ade80}
+.card.good{border-left:3px solid #60a5fa}
+.card.fair{border-left:3px solid #fbbf24}
+.card.poor{border-left:3px solid #f97316}
+.card.bad{border-left:3px solid #f87171}
+.rank-num{font-size:1.1rem;font-weight:800;min-width:24px;text-align:center;color:#555}
+.score-ring{position:relative;width:50px;height:50px;flex-shrink:0}
+.score-ring svg{transform:rotate(-90deg)}
+.score-ring circle{fill:none;stroke-width:5}
+.score-ring .bg{stroke:#1e1e2e}
+.score-ring .fg{stroke-linecap:round}
+.score-num{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:.9rem;font-weight:800}
+.info{flex:1;min-width:0}
+.brand-name{font-size:.95rem;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:5px}
+.tag{font-size:.65rem;padding:2px 7px;border-radius:16px;background:#1a1a2e;border:1px solid #2a2a3e;color:#999}
+.tag.glass{background:#0a1a2e;border-color:#1a3a5e;color:#60a5fa}
+.tag.plastic{background:#2e1a0a;border-color:#5e3a1a;color:#f97316}
+.tag.aluminum{background:#1a1a2e;border-color:#3a3a5e;color:#a78bfa}
+.tag.carton{background:#1a2e1a;border-color:#2a4e2a;color:#86efac}
+.tag.spring{background:#0a2e1a;border-color:#1a5e3a;color:#4ade80}
+.tag.mineral{background:#0a1a2e;border-color:#1a3a5e;color:#60a5fa}
+.tag.volcanic{background:#2e0a1a;border-color:#5e1a3a;color:#f472b6}
+.tag.artesian{background:#1a0a2e;border-color:#3a1a5e;color:#c084fc}
+.tag.sparkling{background:#1a0a2e;border-color:#3a1a5e;color:#a78bfa}
+.tag.flavored{background:#2e2a0a;border-color:#5e4a1a;color:#fbbf24}
+.verdict{text-align:right;min-width:70px}
+.verdict-text{font-size:.65rem;text-transform:uppercase;font-weight:700;letter-spacing:.5px}
+.verdict-text.excellent{color:#4ade80}
+.verdict-text.good{color:#60a5fa}
+.verdict-text.fair{color:#fbbf24}
+.verdict-text.poor{color:#f97316}
+.verdict-text.bad{color:#f87171}
+.empty{text-align:center;color:#555;padding:40px;font-size:.9rem}
+.note{background:#14141f;border:1px solid #2a2a3e;border-radius:10px;padding:14px 18px;margin-top:24px;font-size:.8rem;color:#888;line-height:1.6}
+.note strong{color:#ccc}
+.note a{color:#60a5fa}
+@media(max-width:600px){
+  .card{padding:10px 12px;gap:10px}
+  .score-ring{width:42px;height:42px}
+  .brand-name{font-size:.85rem}
+  .controls{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<h1>💧 Water Quality Rankings</h1>
+<p class="subtitle">76 products rated by Oasis Health lab testing — Updated Feb 10, 2026</p>
+
+<div class="stats" id="stats"></div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#4ade80"></div> Excellent (90+)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#60a5fa"></div> Good (75-89)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#fbbf24"></div> Fair (60-74)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#f97316"></div> Poor (40-59)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#f87171"></div> Avoid (&lt;40)</div>
+</div>
+
+<div class="controls">
+  <input type="text" class="search" id="search" placeholder="Search waters...">
+  <div class="filters" id="filters"></div>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<div class="note">
+  <strong>📊 Source:</strong> <a href="https://www.oasishealth.app" target="_blank">Oasis Health app</a> — science-backed lab testing and analysis. Scores out of 100, adjusted for contaminants, packaging risks, transparency, and source quality.<br>
+  <strong>🔑 Key:</strong> Glass > Plastic for packaging. Spring/volcanic sources score highest. PFAS (forever chemicals) are the biggest differentiator — safe limit is 0.1 ppt per researchers.<br>
+  <strong>💡 Best bets:</strong> Aqua Carpatica (92), Icelandic Glacial glass (90), Hallstein (91), Gerolsteiner sparkling (82). Avoid Topo Chico, Perrier, Deer Park (extreme PFAS).<br>
+  <strong>📅 Last updated:</strong> February 10, 2026
+</div>
+
+<script>
+const data = [{"id": null, "name": "Aqua Carpatica Spring Water Glass Bottle", "score": 92, "type": "bottled_water", "image": null, "brand": "Aqua", "packaging": "glass", "source": "spring", "details": null}, {"id": null, "name": "Hawaii Volcanic Still Glass Bottle", "score": 91, "type": "bottled_water", "image": null, "brand": "Hawaii", "packaging": "glass", "source": "volcanic", "details": null}, {"id": null, "name": "Hallstein Water Glass Bottle", "score": 91, "type": "bottled_water", "image": null, "brand": "Hallstein", "packaging": "glass", "source": "spring", "details": null}, {"id": null, "name": "Icelandic Glacial Water Glass Bottle", "score": 90, "type": "bottled_water", "image": null, "brand": "Icelandic", "packaging": "glass", "source": "spring", "details": null}, {"id": null, "name": "Icelandic Glacial Sparkling Water Glass Bottle", "score": 90, "type": "sparkling_water", "image": null, "brand": "Icelandic", "packaging": "glass", "source": "spring", "details": null}, {"id": null, "name": "Acqua Filette Natural Glass Bottle", "score": 90, "type": "bottled_water", "image": null, "brand": "Acqua", "packaging": "glass", "source": "spring", "details": null}, {"id": null, "name": "Acqua Filette Gently Sparklin Glass Bottle", "score": 90, "type": "sparkling_water", "image": null, "brand": "Acqua", "packaging": "glass", "source": "spring", "details": null}, {"id": null, "name": "Acqua Filette Very Sparkling Glass Bottle", "score": 90, "type": "sparkling_water", "image": null, "brand": "Acqua", "packaging": "glass", "source": "spring", "details": null}, {"id": null, "name": "Icelandic Glacial Water Plastic Bottle", "score": 86, "type": "bottled_water", "image": null, "brand": "Icelandic", "packaging": "plastic", "source": "spring", "details": null}, {"id": null, "name": "Galvanina Still Mineral Water Glass Bottle", "score": 86, "type": "bottled_water", "image": null, "brand": "Galvanina", "packaging": "glass", "source": "mineral", "details": null}, {"id": null, "name": "Vellamo Still Spring Water Glass Bottle", "score": 85, "type": "bottled_water", "image": null, "brand": "Vellamo", "packaging": "glass", "source": "spring", "details": null}, {"id": null, "name": "Hawaii Volcanic Sparkling Glass Bottle", "score": 84, "type": "sparkling_water", "image": null, "brand": "Hawaii", "packaging": "glass", "source": "volcanic", "details": null}, {"id": null, "name": "Panama Blue Water Glass Bottle", "score": 83, "type": "bottled_water", "image": null, "brand": "Panama", "packaging": "glass", "source": "spring", "details": null}, {"id": null, "name": "Gerolsteiner Sparkling Mineral Water Glass Bottle", "score": 82, "type": "sparkling_water", "image": null, "brand": "Gerolsteiner", "packaging": "glass", "source": "mineral", "details": null}, {"id": null, "name": "Hallstein Water Gallon", "score": 81, "type": "water_delivery", "image": null, "brand": "Hallstein", "packaging": "plastic", "source": "spring", "details": null}, {"id": null, "name": "Waiakea Alkaline Water Aluminum Bottle", "score": 80, "type": "bottled_water", "image": null, "brand": "Waiakea", "packaging": "aluminum", "source": "municipal", "details": null}, {"id": null, "name": "Waiakea Hawaiian Volcanic Sparkling Water Aluminum Bottle", "score": 80, "type": "sparkling_water", "image": null, "brand": "Waiakea", "packaging": "aluminum", "source": "volcanic", "details": null}, {"id": null, "name": "Icelandic Glacial Still Water Can", "score": 79, "type": "bottled_water", "image": null, "brand": "Icelandic", "packaging": "aluminum", "source": "spring", "details": null}, {"id": null, "name": "Fontis Spring Bottled Water Gallon", "score": 79, "type": "bottled_water", "image": null, "brand": "Fontis", "packaging": "plastic", "source": "spring", "details": null}, {"id": null, "name": "Ophora Water Hyper-Oxygenated Half Gallon Glass Bottle", "score": 79, "type": "bottled_water", "image": null, "brand": "Ophora", "packaging": "glass", "source": "spring", "details": null}, {"id": null, "name": "Flow Alkaline Cucumber + Mint Flavored Spring Water Carton", "score": 64, "type": "flavored_water", "image": null, "brand": "Flow", "packaging": "carton", "source": "spring", "details": null}, {"id": null, "name": "Mountain Valley Blackberry Pomegranate Flavored Sparkling Water Glass Bottle", "score": 50, "type": "flavored_water", "image": null, "brand": "Mountain", "packaging": "glass", "source": "spring", "details": null}, {"id": null, "name": "365 Sparkling Water Lime Can", "score": 40, "type": "flavored_water", "image": null, "brand": "365", "packaging": "aluminum", "source": "spring", "details": null}, {"id": null, "name": "Perrier Pink Grapefruit Flavored Water Can", "score": 38, "type": "flavored_water", "image": null, "brand": "Perrier", "packaging": "aluminum", "source": "spring", "details": null}, {"id": null, "name": "smartwater Cucumber Lime Plastic Bottle", "score": 38, "type": "flavored_water", "image": null, "brand": "smartwater", "packaging": "plastic", "source": "spring", "details": null}, {"id": null, "name": "MONTELLiER\u00ae Carbonated Natural Spring Water Lemon Can", "score": 38, "type": "flavored_water", "image": null, "brand": "MONTELLiER\u00ae", "packaging": "aluminum", "source": "spring", "details": null}, {"id": null, "name": "Liquid Death Cherry Obituary Flavored Sparkling Water Can", "score": 33, "type": "flavored_water", "image": null, "brand": "Liquid", "packaging": "aluminum", "source": "spring", "details": null}, {"id": null, "name": "Jana Flavored Water Plastic Bottle", "score": 30, "type": "flavored_water", "image": null, "brand": "Jana", "packaging": "plastic", "source": "spring", "details": null}, {"id": null, "name": "Sprouts Organic Lemon Sparkling Mineral Water Glass Bottle", "score": 29, "type": "flavored_water", "image": null, "brand": "Sprouts", "packaging": "glass", "source": "mineral", "details": null}, {"id": null, "name": "KOR LVL UP Organic Hydrate Orange Ginger Plastic Bottle", "score": 25, "type": "flavored_water", "image": null, "brand": "KOR", "packaging": "plastic", "source": "spring", "details": null}, {"id": null, "name": "Sanzo Flavored Sparkling Water Can", "score": 23, "type": "flavored_water", "image": null, "brand": "Sanzo", "packaging": "aluminum", "source": "spring", "details": null}, {"id": null, "name": "B'EAU Collagen Water Can", "score": 23, "type": "flavored_water", "image": null, "brand": "B'EAU", "packaging": "aluminum", "source": "spring", "details": null}, {"id": null, "name": "Wild Noni Sparkling Can", "score": 23, "type": "flavored_water", "image": null, "brand": "Wild", "packaging": "aluminum", "source": "spring", "details": null}, {"id": null, "name": "Path Sparkling Flavored Water Can", "score": 20, "type": "flavored_water", "image": null, "brand": "Path", "packaging": "aluminum", "source": "spring", "details": null}, {"id": null, "name": "Mela Watermelon Water Can", "score": 17, "type": "flavored_water", "image": null, "brand": "Mela", "packaging": "aluminum", "source": "spring", "details": null}, {"id": null, "name": "Highland Spring Sparkling Flavored Water Can", "score": 13, "type": "flavored_water", "image": null, "brand": "Highland", "packaging": "aluminum", "source": "spring", "details": null}, {"id": null, "name": "POPPI Lemon Lime Can", "score": 11, "type": "flavored_water", "image": null, "brand": "POPPI", "packaging": "aluminum", "source": "spring", "details": null}, {"id": null, "name": "Lemon Perfect Hydrating Lemon Water Plastic Bottle", "score": 9, "type": "flavored_water", "image": null, "brand": "Lemon", "packaging": "plastic", "source": "spring", "details": null}, {"id": null, "name": "CORE Hydration+ Calm Plastic Bottle", "score": 9, "type": "flavored_water", "image": null, "brand": "CORE", "packaging": "plastic", "source": "spring", "details": null}, {"id": null, "name": "Spindrift Sparkling Water Lemon Can", "score": 8, "type": "flavored_water", "image": null, "brand": "Spindrift", "packaging": "aluminum", "source": "spring", "details": null}, {"id": null, "name": "Icelandic Glacial Classic Carbonated Water Can", "score": 79, "type": "sparkling_water", "image": null, "brand": "Icelandic", "packaging": "aluminum", "source": "spring", "details": null}, {"id": null, "name": "Loonen Sparkling Water Glass Bottle", "score": 71, "type": "sparkling_water", "image": null, "brand": "Loonen", "packaging": "glass", "source": "spring", "details": null}, {"id": null, "name": "Calistoga Sparkling Mineral Water Plastic Bottle", "score": 70, "type": "sparkling_water", "image": null, "brand": "Calistoga", "packaging": "plastic", "source": "mineral", "details": null}, {"id": null, "name": "Crystal Geyser Sparkling Spring Water", "score": 68, "type": "sparkling_water", "image": null, "brand": "Crystal", "packaging": "glass", "source": "spring", "details": null}, {"id": null, "name": "Agua de Piedra Sparkling Mineral Water Glass Bottle", "score": 68, "type": "sparkling_water", "image": null, "brand": "Agua", "packaging": "glass", "source": "mineral", "details": null}, {"id": null, "name": "Evian Sparkling Water Glass Bottle", "score": 65, "type": "sparkling_water", "image": null, "brand": "Evian", "packaging": "glass", "source": "spring", "details": null}, {"id": null, "name": "Crystal Geyser Sparkling Mineral Water", "score": 62, "type": "sparkling_water", "image": null, "brand": "Crystal", "packaging": "glass", "source": "mineral", "details": null}, {"id": null, "name": "Chilly Water Orginal Sparkling Water Can", "score": 57, "type": "sparkling_water", "image": null, "brand": "Chilly", "packaging": "aluminum", "source": "spring", "details": null}, {"id": null, "name": "The Mountain Valley Sparkling Water Glass Bottle", "score": 52, "type": "sparkling_water", "image": null, "brand": "The", "packaging": "glass", "source": "spring", "details": null}, {"id": null, "name": "Voss Sparkling Water Glass Bottle", "score": 50, "type": "sparkling_water", "image": null, "brand": "Voss", "packaging": "glass", "source": "spring", "details": null}, {"id": null, "name": "Chiarella Symposion Sparkling Natural Water Glass Bottle", "score": 50, "type": "sparkling_water", "image": null, "brand": "Chiarella", "packaging": "glass", "source": "spring", "details": null}, {"id": null, "name": "Clearly Canadian Sparkling Mineral Water Glass Bottle", "score": 50, "type": "sparkling_water", "image": null, "brand": "Clearly", "packaging": "glass", "source": "mineral", "details": null}, {"id": null, "name": "Sibilla Sparkling Water Glass Bottle", "score": 50, "type": "sparkling_water", "image": null, "brand": "Sibilla", "packaging": "glass", "source": "spring", "details": null}, {"id": null, "name": "Santa Vittoria Sparkling Water Glass Bottle", "score": 50, "type": "sparkling_water", "image": null, "brand": "Santa", "packaging": "glass", "source": "spring", "details": null}, {"id": null, "name": "Galvanina Sparkling Mineral Water Glass Bottle", "score": 50, "type": "sparkling_water", "image": null, "brand": "Galvanina", "packaging": "glass", "source": "mineral", "details": null}, {"id": null, "name": "Apollinaris Selection Sparkling Glass Bottle", "score": 50, "type": "sparkling_water", "image": null, "brand": "Apollinaris", "packaging": "glass", "source": "spring", "details": null}, {"id": null, "name": "Staatl. Fachingen Sparkling Water Glass Bottle", "score": 50, "type": "sparkling_water", "image": null, "brand": "Staatl.", "packaging": "glass", "source": "spring", "details": null}, {"id": null, "name": "Berkshire Springs Gallon", "score": 76, "type": "water_delivery", "image": null, "brand": "Berkshire", "packaging": "plastic", "source": "spring", "details": null}, {"id": null, "name": "Kentwood Springs Artesian Water Gallon", "score": 75, "type": "water_delivery", "image": null, "brand": "Kentwood", "packaging": "plastic", "source": "spring", "details": null}, {"id": null, "name": "Labrador Source Spring Water Gallon", "score": 59, "type": "water_delivery", "image": null, "brand": "Labrador", "packaging": "plastic", "source": "spring", "details": null}, {"id": null, "name": "Mountain Valley Spring Water Gallon", "score": 50, "type": "water_delivery", "image": null, "brand": "Mountain", "packaging": "plastic", "source": "spring", "details": null}, {"id": null, "name": "Bear Springs Canadian Spring Water Gallon", "score": 50, "type": "water_delivery", "image": null, "brand": "Bear", "packaging": "aluminum", "source": "spring", "details": null}, {"id": null, "name": "Alta Alkaline Water Gallon", "score": 50, "type": "water_delivery", "image": null, "brand": "Alta", "packaging": "plastic", "source": "municipal", "details": null}, {"id": null, "name": "Blue Falls Purified Water Gallon", "score": 46, "type": "water_delivery", "image": null, "brand": "Blue", "packaging": "plastic", "source": "municipal", "details": null}, {"id": null, "name": "Primo Spring Water Gallon", "score": 45, "type": "water_delivery", "image": null, "brand": "Primo", "packaging": "plastic", "source": "spring", "details": null}, {"id": null, "name": "Sparkletts Spring Water Gallon", "score": 44, "type": "water_delivery", "image": null, "brand": "Sparkletts", "packaging": "plastic", "source": "spring", "details": null}, {"id": null, "name": "Cl\u00edr Irish Spring Water Water Gallon", "score": 40, "type": "water_delivery", "image": null, "brand": "Cl\u00edr", "packaging": "plastic", "source": "spring", "details": null}, {"id": null, "name": "TriBeCa Spring Water Gallon", "score": 38, "type": "water_delivery", "image": null, "brand": "TriBeCa", "packaging": "plastic", "source": "spring", "details": null}, {"id": null, "name": "Phresh Waters Spring Water Gallon", "score": 35, "type": "water_delivery", "image": null, "brand": "Phresh", "packaging": "plastic", "source": "spring", "details": null}, {"id": null, "name": "Alka1 Alkaline Water Gallon", "score": 35, "type": "water_delivery", "image": null, "brand": "Alka1", "packaging": "plastic", "source": "municipal", "details": null}, {"id": null, "name": "Primo Purified Water Gallon", "score": 31, "type": "water_delivery", "image": null, "brand": "Primo", "packaging": "plastic", "source": "municipal", "details": null}, {"id": null, "name": "Sparkletts Distilled Water Gallon", "score": 31, "type": "water_delivery", "image": null, "brand": "Sparkletts", "packaging": "plastic", "source": "municipal", "details": null}, {"id": null, "name": "Menehune Purified Water Gallon", "score": 31, "type": "water_delivery", "image": null, "brand": "Menehune", "packaging": "plastic", "source": "municipal", "details": null}, {"id": null, "name": "Sparkletts Purified Water Gallon", "score": 30, "type": "water_delivery", "image": null, "brand": "Sparkletts", "packaging": "plastic", "source": "municipal", "details": null}, {"id": null, "name": "Ice River Springs Natural Spring Water Gallon", "score": 30, "type": "water_delivery", "image": null, "brand": "Ice", "packaging": "plastic", "source": "spring", "details": null}, {"id": null, "name": "Canadian Springs Natural Spring Water", "score": 30, "type": "water_delivery", "image": null, "brand": "Canadian", "packaging": "aluminum", "source": "spring", "details": null}];
+
+const typeLabels = {
+  bottled_water: 'Still Water',
+  sparkling_water: 'Sparkling',
+  water_delivery: 'Delivery',
+  flavored_water: 'Flavored'
+};
+
+function getGrade(s) {
+  if (s >= 90) return {g:'excellent',t:'Excellent',c:'#4ade80'};
+  if (s >= 75) return {g:'good',t:'Good',c:'#60a5fa'};
+  if (s >= 60) return {g:'fair',t:'Fair',c:'#fbbf24'};
+  if (s >= 40) return {g:'poor',t:'Poor',c:'#f97316'};
+  return {g:'bad',t:'Avoid',c:'#f87171'};
+}
+
+// Stats
+const statsEl = document.getElementById('stats');
+const grades = {excellent:0,good:0,fair:0,poor:0,bad:0};
+data.forEach(d => grades[getGrade(d.score).g]++);
+statsEl.innerHTML = `
+  <div class="stat"><div class="stat-num">${data.length}</div><div class="stat-label">Products Rated</div></div>
+  <div class="stat"><div class="stat-num" style="color:#4ade80">${grades.excellent}</div><div class="stat-label">Excellent</div></div>
+  <div class="stat"><div class="stat-num" style="color:#60a5fa">${grades.good}</div><div class="stat-label">Good</div></div>
+  <div class="stat"><div class="stat-num" style="color:#fbbf24">${grades.fair}</div><div class="stat-label">Fair</div></div>
+  <div class="stat"><div class="stat-num" style="color:#f87171">${grades.poor + grades.bad}</div><div class="stat-label">Poor/Avoid</div></div>
+`;
+
+// Filters
+const filtersEl = document.getElementById('filters');
+const types = ['all', ...new Set(data.map(d => d.type))];
+let activeType = 'all';
+const packagings = ['all', ...new Set(data.map(d => d.packaging).filter(Boolean))];
+let activePkg = 'all';
+
+function renderFilters() {
+  filtersEl.innerHTML = types.map(t =>
+    `<button class="filter-btn${activeType===t?' active':''}" data-type="${t}">${t==='all'?'All':typeLabels[t]||t}</button>`
+  ).join('') + packagings.filter(p=>p!=='all').map(p =>
+    `<button class="filter-btn${activePkg===p?' active':''}" data-pkg="${p}">🫙 ${p}</button>`
+  ).join('');
+}
+renderFilters();
+
+filtersEl.addEventListener('click', e => {
+  const btn = e.target.closest('.filter-btn');
+  if (!btn) return;
+  if (btn.dataset.type !== undefined) {
+    activeType = activeType === btn.dataset.type ? 'all' : btn.dataset.type;
+  }
+  if (btn.dataset.pkg !== undefined) {
+    activePkg = activePkg === btn.dataset.pkg ? 'all' : btn.dataset.pkg;
+  }
+  renderFilters();
+  render();
+});
+
+const circ = 2 * Math.PI * 20;
+const searchEl = document.getElementById('search');
+const gridEl = document.getElementById('grid');
+
+function render() {
+  const q = searchEl.value.toLowerCase();
+  let filtered = data.filter(d => {
+    if (q && !d.name.toLowerCase().includes(q) && !(d.brand||'').toLowerCase().includes(q)) return false;
+    if (activeType !== 'all' && d.type !== activeType) return false;
+    if (activePkg !== 'all' && d.packaging !== activePkg) return false;
+    return true;
+  }).sort((a,b) => b.score - a.score);
+
+  if (!filtered.length) {
+    gridEl.innerHTML = '<div class="empty">No waters match your search.</div>';
+    return;
+  }
+
+  gridEl.innerHTML = filtered.map((w, i) => {
+    const {g, t, c} = getGrade(w.score);
+    const offset = circ - (w.score / 100) * circ;
+    const tags = [];
+    if (w.packaging) tags.push(`<span class="tag ${w.packaging}">${w.packaging}</span>`);
+    if (w.source) tags.push(`<span class="tag ${w.source}">${w.source}</span>`);
+    if (w.type === 'sparkling_water') tags.push('<span class="tag sparkling">sparkling</span>');
+    if (w.type === 'flavored_water') tags.push('<span class="tag flavored">flavored</span>');
+    if (w.type === 'water_delivery') tags.push('<span class="tag">delivery</span>');
+    return `<div class="card ${g}">
+      <div class="rank-num">${i+1}</div>
+      <div class="score-ring">
+        <svg width="50" height="50" viewBox="0 0 50 50">
+          <circle class="bg" cx="25" cy="25" r="20"/>
+          <circle class="fg" cx="25" cy="25" r="20" stroke="${c}" stroke-dasharray="${circ}" stroke-dashoffset="${offset}"/>
+        </svg>
+        <div class="score-num" style="color:${c}">${w.score}</div>
+      </div>
+      <div class="info">
+        <div class="brand-name">${w.name}</div>
+        <div class="tags">${tags.join('')}</div>
+      </div>
+      <div class="verdict">
+        <div class="verdict-text ${g}">${t}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+searchEl.addEventListener('input', render);
+render();
+</script>
+</body>
+</html>
