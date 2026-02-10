@@ -473,8 +473,6 @@ function renderCard(w, rank) {
   if (w.source) infoItems.push({lbl: 'Water Source', val: w.source + (w.waterSource ? ' (' + w.waterSource.replace(/_/g, ' ') + ')' : '')});
   else if (w.waterSource) infoItems.push({lbl: 'Water Source', val: w.waterSource.replace(/_/g, ' ')});
   if (w.treatment && w.treatment !== 'Unknown') infoItems.push({lbl: 'Treatment Process', val: w.treatment});
-  if (w.tds != null) infoItems.push({lbl: 'TDS', val: w.tds + ' ppm'});
-  if (w.ph != null) infoItems.push({lbl: 'pH', val: String(w.ph)});
   if (infoItems.length) {
     infoGridHtml = `<div class="info-grid">${infoItems.map(i => `<div class="info-box"><div class="lbl">${i.lbl}</div><div class="val">${i.val}</div></div>`).join('')}</div>`;
   }
