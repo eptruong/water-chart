@@ -174,7 +174,7 @@ function getSourceFromName(name) {
 
 async function init() {
   try {
-    const resp = await fetch('data.json');
+    const resp = await fetch('data.json?v=' + Date.now());
     allData = await resp.json();
   } catch(e) {
     document.getElementById('grid').innerHTML = '<div class="empty">Failed to load data.</div>';
