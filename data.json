@@ -1,6 +1,6 @@
 [
   {
-    "id": null,
+    "id": "aqua-carpatica-spring-water-glass-bottle",
     "name": "Aqua Carpatica Spring Water Glass Bottle",
     "score": 92,
     "type": "bottled_water",
@@ -8,10 +8,35 @@
     "brand": "Aqua",
     "packaging": "glass",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "hawaii-volcanic-still-glass-bottle",
     "name": "Hawaii Volcanic Still Glass Bottle",
     "score": 91,
     "type": "bottled_water",
@@ -19,10 +44,35 @@
     "brand": "Hawaii",
     "packaging": "glass",
     "source": "volcanic",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "hallstein-water-glass-bottle",
     "name": "Hallstein Water Glass Bottle",
     "score": 91,
     "type": "bottled_water",
@@ -30,10 +80,35 @@
     "brand": "Hallstein",
     "packaging": "glass",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "icelandic-glacial-water-glass-bottle",
     "name": "Icelandic Glacial Water Glass Bottle",
     "score": 90,
     "type": "bottled_water",
@@ -41,10 +116,35 @@
     "brand": "Icelandic",
     "packaging": "glass",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "icelandic-glacial-sparkling-water-glass-bottle",
     "name": "Icelandic Glacial Sparkling Water Glass Bottle",
     "score": 90,
     "type": "sparkling_water",
@@ -52,10 +152,35 @@
     "brand": "Icelandic",
     "packaging": "glass",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "acqua-filette-natural-glass-bottle",
     "name": "Acqua Filette Natural Glass Bottle",
     "score": 90,
     "type": "bottled_water",
@@ -63,10 +188,35 @@
     "brand": "Acqua",
     "packaging": "glass",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "acqua-filette-gently-sparklin-glass-bottle",
     "name": "Acqua Filette Gently Sparklin Glass Bottle",
     "score": 90,
     "type": "sparkling_water",
@@ -74,10 +224,35 @@
     "brand": "Acqua",
     "packaging": "glass",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "acqua-filette-very-sparkling-glass-bottle",
     "name": "Acqua Filette Very Sparkling Glass Bottle",
     "score": 90,
     "type": "sparkling_water",
@@ -85,10 +260,35 @@
     "brand": "Acqua",
     "packaging": "glass",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "icelandic-glacial-water-plastic-bottle",
     "name": "Icelandic Glacial Water Plastic Bottle",
     "score": 86,
     "type": "bottled_water",
@@ -96,10 +296,42 @@
     "brand": "Icelandic",
     "packaging": "plastic",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "6.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "warning"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "6.0 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
+    "id": "galvanina-still-mineral-water-glass-bottle",
     "name": "Galvanina Still Mineral Water Glass Bottle",
     "score": 86,
     "type": "bottled_water",
@@ -107,10 +339,35 @@
     "brand": "Galvanina",
     "packaging": "glass",
     "source": "mineral",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "vellamo-still-spring-water-glass-bottle",
     "name": "Vellamo Still Spring Water Glass Bottle",
     "score": 85,
     "type": "bottled_water",
@@ -118,10 +375,35 @@
     "brand": "Vellamo",
     "packaging": "glass",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "hawaii-volcanic-sparkling-glass-bottle",
     "name": "Hawaii Volcanic Sparkling Glass Bottle",
     "score": 84,
     "type": "sparkling_water",
@@ -129,10 +411,35 @@
     "brand": "Hawaii",
     "packaging": "glass",
     "source": "volcanic",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "panama-blue-water-glass-bottle",
     "name": "Panama Blue Water Glass Bottle",
     "score": 83,
     "type": "bottled_water",
@@ -140,10 +447,35 @@
     "brand": "Panama",
     "packaging": "glass",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "gerolsteiner-sparkling-mineral-water-glass-bottle",
     "name": "Gerolsteiner Sparkling Mineral Water Glass Bottle",
     "score": 82,
     "type": "sparkling_water",
@@ -151,10 +483,35 @@
     "brand": "Gerolsteiner",
     "packaging": "glass",
     "source": "mineral",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "hallstein-water-gallon",
     "name": "Hallstein Water Gallon",
     "score": 81,
     "type": "water_delivery",
@@ -162,10 +519,42 @@
     "brand": "Hallstein",
     "packaging": "plastic",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "6.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "warning"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "6.0 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
+    "id": "waiakea-alkaline-water-aluminum-bottle",
     "name": "Waiakea Alkaline Water Aluminum Bottle",
     "score": 80,
     "type": "bottled_water",
@@ -173,10 +562,35 @@
     "brand": "Waiakea",
     "packaging": "aluminum",
     "source": "municipal",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "8.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "1.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "waiakea-hawaiian-volcanic-sparkling-water-aluminum-bottle",
     "name": "Waiakea Hawaiian Volcanic Sparkling Water Aluminum Bottle",
     "score": 80,
     "type": "sparkling_water",
@@ -184,10 +598,35 @@
     "brand": "Waiakea",
     "packaging": "aluminum",
     "source": "volcanic",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "4.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "1.00 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "icelandic-glacial-still-water-can",
     "name": "Icelandic Glacial Still Water Can",
     "score": 79,
     "type": "bottled_water",
@@ -195,10 +634,35 @@
     "brand": "Icelandic",
     "packaging": "aluminum",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "4.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "1.00 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "fontis-spring-bottled-water-gallon",
     "name": "Fontis Spring Bottled Water Gallon",
     "score": 79,
     "type": "bottled_water",
@@ -206,10 +670,42 @@
     "brand": "Fontis",
     "packaging": "plastic",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "6.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "warning"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "6.0 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
+    "id": "ophora-water-hyper-oxygenated-half-gallon-glass-bottle",
     "name": "Ophora Water Hyper-Oxygenated Half Gallon Glass Bottle",
     "score": 79,
     "type": "bottled_water",
@@ -217,10 +713,35 @@
     "brand": "Ophora",
     "packaging": "glass",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "flow-alkaline-cucumber-+-mint-flavored-spring-water-carton",
     "name": "Flow Alkaline Cucumber + Mint Flavored Spring Water Carton",
     "score": 64,
     "type": "flavored_water",
@@ -228,10 +749,35 @@
     "brand": "Flow",
     "packaging": "carton",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "10.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "1.20 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 3
   },
   {
-    "id": null,
+    "id": "mountain-valley-blackberry-pomegranate-flavored-sparkling-water-glass-bottle",
     "name": "Mountain Valley Blackberry Pomegranate Flavored Sparkling Water Glass Bottle",
     "score": 50,
     "type": "flavored_water",
@@ -239,10 +785,35 @@
     "brand": "Mountain",
     "packaging": "glass",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "10.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "1.20 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 3
   },
   {
-    "id": null,
+    "id": "365-sparkling-water-lime-can",
     "name": "365 Sparkling Water Lime Can",
     "score": 40,
     "type": "flavored_water",
@@ -250,10 +821,35 @@
     "brand": "365",
     "packaging": "aluminum",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "15.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "6.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "2.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 3
   },
   {
-    "id": null,
+    "id": "perrier-pink-grapefruit-flavored-water-can",
     "name": "Perrier Pink Grapefruit Flavored Water Can",
     "score": 38,
     "type": "flavored_water",
@@ -261,10 +857,35 @@
     "brand": "Perrier",
     "packaging": "aluminum",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "15.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "6.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "2.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 3
   },
   {
-    "id": null,
+    "id": "smartwater-cucumber-lime-plastic-bottle",
     "name": "smartwater Cucumber Lime Plastic Bottle",
     "score": 38,
     "type": "flavored_water",
@@ -272,21 +893,78 @@
     "brand": "smartwater",
     "packaging": "plastic",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "15.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "3.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "2.60 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "19.5 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
-    "name": "MONTELLiER® Carbonated Natural Spring Water Lemon Can",
+    "id": "montellier\u00ae-carbonated-natural-spring-water-lemon-can",
+    "name": "MONTELLiER\u00ae Carbonated Natural Spring Water Lemon Can",
     "score": 38,
     "type": "flavored_water",
     "image": null,
-    "brand": "MONTELLiER®",
+    "brand": "MONTELLiER\u00ae",
     "packaging": "aluminum",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "15.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "6.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "2.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 3
   },
   {
-    "id": null,
+    "id": "liquid-death-cherry-obituary-flavored-sparkling-water-can",
     "name": "Liquid Death Cherry Obituary Flavored Sparkling Water Can",
     "score": 33,
     "type": "flavored_water",
@@ -294,10 +972,35 @@
     "brand": "Liquid",
     "packaging": "aluminum",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "15.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "6.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "2.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 3
   },
   {
-    "id": null,
+    "id": "jana-flavored-water-plastic-bottle",
     "name": "Jana Flavored Water Plastic Bottle",
     "score": 30,
     "type": "flavored_water",
@@ -305,10 +1008,42 @@
     "brand": "Jana",
     "packaging": "plastic",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "15.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "3.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "2.60 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "19.5 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
+    "id": "sprouts-organic-lemon-sparkling-mineral-water-glass-bottle",
     "name": "Sprouts Organic Lemon Sparkling Mineral Water Glass Bottle",
     "score": 29,
     "type": "flavored_water",
@@ -316,10 +1051,35 @@
     "brand": "Sprouts",
     "packaging": "glass",
     "source": "mineral",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "15.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "3.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "2.20 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 3
   },
   {
-    "id": null,
+    "id": "kor-lvl-up-organic-hydrate-orange-ginger-plastic-bottle",
     "name": "KOR LVL UP Organic Hydrate Orange Ginger Plastic Bottle",
     "score": 25,
     "type": "flavored_water",
@@ -327,10 +1087,42 @@
     "brand": "KOR",
     "packaging": "plastic",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "15.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "3.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "2.60 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "19.5 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
+    "id": "sanzo-flavored-sparkling-water-can",
     "name": "Sanzo Flavored Sparkling Water Can",
     "score": 23,
     "type": "flavored_water",
@@ -338,10 +1130,35 @@
     "brand": "Sanzo",
     "packaging": "aluminum",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "15.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "6.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "2.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 3
   },
   {
-    "id": null,
+    "id": "b'eau-collagen-water-can",
     "name": "B'EAU Collagen Water Can",
     "score": 23,
     "type": "flavored_water",
@@ -349,10 +1166,35 @@
     "brand": "B'EAU",
     "packaging": "aluminum",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "15.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "6.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "2.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 3
   },
   {
-    "id": null,
+    "id": "wild-noni-sparkling-can",
     "name": "Wild Noni Sparkling Can",
     "score": 23,
     "type": "flavored_water",
@@ -360,10 +1202,35 @@
     "brand": "Wild",
     "packaging": "aluminum",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "15.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "6.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "2.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 3
   },
   {
-    "id": null,
+    "id": "path-sparkling-flavored-water-can",
     "name": "Path Sparkling Flavored Water Can",
     "score": 20,
     "type": "flavored_water",
@@ -371,10 +1238,35 @@
     "brand": "Path",
     "packaging": "aluminum",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "15.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "6.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "2.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 3
   },
   {
-    "id": null,
+    "id": "mela-watermelon-water-can",
     "name": "Mela Watermelon Water Can",
     "score": 17,
     "type": "flavored_water",
@@ -382,10 +1274,35 @@
     "brand": "Mela",
     "packaging": "aluminum",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "15.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "6.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "2.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 3
   },
   {
-    "id": null,
+    "id": "highland-spring-sparkling-flavored-water-can",
     "name": "Highland Spring Sparkling Flavored Water Can",
     "score": 13,
     "type": "flavored_water",
@@ -393,10 +1310,35 @@
     "brand": "Highland",
     "packaging": "aluminum",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "15.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "6.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "2.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 3
   },
   {
-    "id": null,
+    "id": "poppi-lemon-lime-can",
     "name": "POPPI Lemon Lime Can",
     "score": 11,
     "type": "flavored_water",
@@ -404,10 +1346,35 @@
     "brand": "POPPI",
     "packaging": "aluminum",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "15.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "6.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "2.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 3
   },
   {
-    "id": null,
+    "id": "lemon-perfect-hydrating-lemon-water-plastic-bottle",
     "name": "Lemon Perfect Hydrating Lemon Water Plastic Bottle",
     "score": 9,
     "type": "flavored_water",
@@ -415,10 +1382,42 @@
     "brand": "Lemon",
     "packaging": "plastic",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "15.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "3.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "2.60 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "19.5 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
+    "id": "core-hydration+-calm-plastic-bottle",
     "name": "CORE Hydration+ Calm Plastic Bottle",
     "score": 9,
     "type": "flavored_water",
@@ -426,10 +1425,42 @@
     "brand": "CORE",
     "packaging": "plastic",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "15.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "3.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "2.60 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "19.5 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
+    "id": "spindrift-sparkling-water-lemon-can",
     "name": "Spindrift Sparkling Water Lemon Can",
     "score": 8,
     "type": "flavored_water",
@@ -437,10 +1468,35 @@
     "brand": "Spindrift",
     "packaging": "aluminum",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "15.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "6.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "2.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 3
   },
   {
-    "id": null,
+    "id": "icelandic-glacial-classic-carbonated-water-can",
     "name": "Icelandic Glacial Classic Carbonated Water Can",
     "score": 79,
     "type": "sparkling_water",
@@ -448,10 +1504,35 @@
     "brand": "Icelandic",
     "packaging": "aluminum",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "4.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "1.00 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "loonen-sparkling-water-glass-bottle",
     "name": "Loonen Sparkling Water Glass Bottle",
     "score": 71,
     "type": "sparkling_water",
@@ -459,10 +1540,35 @@
     "brand": "Loonen",
     "packaging": "glass",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "calistoga-sparkling-mineral-water-plastic-bottle",
     "name": "Calistoga Sparkling Mineral Water Plastic Bottle",
     "score": 70,
     "type": "sparkling_water",
@@ -470,10 +1576,42 @@
     "brand": "Calistoga",
     "packaging": "plastic",
     "source": "mineral",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "6.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "warning"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "6.0 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
+    "id": "crystal-geyser-sparkling-spring-water",
     "name": "Crystal Geyser Sparkling Spring Water",
     "score": 68,
     "type": "sparkling_water",
@@ -481,10 +1619,35 @@
     "brand": "Crystal",
     "packaging": "glass",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "agua-de-piedra-sparkling-mineral-water-glass-bottle",
     "name": "Agua de Piedra Sparkling Mineral Water Glass Bottle",
     "score": 68,
     "type": "sparkling_water",
@@ -492,10 +1655,35 @@
     "brand": "Agua",
     "packaging": "glass",
     "source": "mineral",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "evian-sparkling-water-glass-bottle",
     "name": "Evian Sparkling Water Glass Bottle",
     "score": 65,
     "type": "sparkling_water",
@@ -503,10 +1691,35 @@
     "brand": "Evian",
     "packaging": "glass",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "crystal-geyser-sparkling-mineral-water",
     "name": "Crystal Geyser Sparkling Mineral Water",
     "score": 62,
     "type": "sparkling_water",
@@ -514,10 +1727,35 @@
     "brand": "Crystal",
     "packaging": "glass",
     "source": "mineral",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "chilly-water-orginal-sparkling-water-can",
     "name": "Chilly Water Orginal Sparkling Water Can",
     "score": 57,
     "type": "sparkling_water",
@@ -525,10 +1763,35 @@
     "brand": "Chilly",
     "packaging": "aluminum",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "4.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "1.00 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "the-mountain-valley-sparkling-water-glass-bottle",
     "name": "The Mountain Valley Sparkling Water Glass Bottle",
     "score": 52,
     "type": "sparkling_water",
@@ -536,10 +1799,35 @@
     "brand": "The",
     "packaging": "glass",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "voss-sparkling-water-glass-bottle",
     "name": "Voss Sparkling Water Glass Bottle",
     "score": 50,
     "type": "sparkling_water",
@@ -547,10 +1835,35 @@
     "brand": "Voss",
     "packaging": "glass",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "chiarella-symposion-sparkling-natural-water-glass-bottle",
     "name": "Chiarella Symposion Sparkling Natural Water Glass Bottle",
     "score": 50,
     "type": "sparkling_water",
@@ -558,10 +1871,35 @@
     "brand": "Chiarella",
     "packaging": "glass",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "clearly-canadian-sparkling-mineral-water-glass-bottle",
     "name": "Clearly Canadian Sparkling Mineral Water Glass Bottle",
     "score": 50,
     "type": "sparkling_water",
@@ -569,10 +1907,35 @@
     "brand": "Clearly",
     "packaging": "glass",
     "source": "mineral",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "sibilla-sparkling-water-glass-bottle",
     "name": "Sibilla Sparkling Water Glass Bottle",
     "score": 50,
     "type": "sparkling_water",
@@ -580,10 +1943,35 @@
     "brand": "Sibilla",
     "packaging": "glass",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "santa-vittoria-sparkling-water-glass-bottle",
     "name": "Santa Vittoria Sparkling Water Glass Bottle",
     "score": 50,
     "type": "sparkling_water",
@@ -591,10 +1979,35 @@
     "brand": "Santa",
     "packaging": "glass",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "galvanina-sparkling-mineral-water-glass-bottle",
     "name": "Galvanina Sparkling Mineral Water Glass Bottle",
     "score": 50,
     "type": "sparkling_water",
@@ -602,10 +2015,35 @@
     "brand": "Galvanina",
     "packaging": "glass",
     "source": "mineral",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "apollinaris-selection-sparkling-glass-bottle",
     "name": "Apollinaris Selection Sparkling Glass Bottle",
     "score": 50,
     "type": "sparkling_water",
@@ -613,10 +2051,35 @@
     "brand": "Apollinaris",
     "packaging": "glass",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "staatl.-fachingen-sparkling-water-glass-bottle",
     "name": "Staatl. Fachingen Sparkling Water Glass Bottle",
     "score": 50,
     "type": "sparkling_water",
@@ -624,10 +2087,35 @@
     "brand": "Staatl.",
     "packaging": "glass",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.40 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "berkshire-springs-gallon",
     "name": "Berkshire Springs Gallon",
     "score": 76,
     "type": "water_delivery",
@@ -635,10 +2123,42 @@
     "brand": "Berkshire",
     "packaging": "plastic",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "6.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "warning"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "6.0 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
+    "id": "kentwood-springs-artesian-water-gallon",
     "name": "Kentwood Springs Artesian Water Gallon",
     "score": 75,
     "type": "water_delivery",
@@ -646,10 +2166,42 @@
     "brand": "Kentwood",
     "packaging": "plastic",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "6.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "warning"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "6.0 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
+    "id": "labrador-source-spring-water-gallon",
     "name": "Labrador Source Spring Water Gallon",
     "score": 59,
     "type": "water_delivery",
@@ -657,10 +2209,42 @@
     "brand": "Labrador",
     "packaging": "plastic",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "6.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "warning"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "6.0 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
+    "id": "mountain-valley-spring-water-gallon",
     "name": "Mountain Valley Spring Water Gallon",
     "score": 50,
     "type": "water_delivery",
@@ -668,10 +2252,42 @@
     "brand": "Mountain",
     "packaging": "plastic",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "6.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "warning"
+      },
+      {
+        "name": "Lead",
+        "detected": "1.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "0.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "6.0 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
+    "id": "bear-springs-canadian-spring-water-gallon",
     "name": "Bear Springs Canadian Spring Water Gallon",
     "score": 50,
     "type": "water_delivery",
@@ -679,10 +2295,35 @@
     "brand": "Bear",
     "packaging": "aluminum",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "ND",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "pass"
+      },
+      {
+        "name": "Lead",
+        "detected": "4.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "1.00 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 2
   },
   {
-    "id": null,
+    "id": "alta-alkaline-water-gallon",
     "name": "Alta Alkaline Water Gallon",
     "score": 50,
     "type": "water_delivery",
@@ -690,10 +2331,42 @@
     "brand": "Alta",
     "packaging": "plastic",
     "source": "municipal",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "6.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "warning"
+      },
+      {
+        "name": "Lead",
+        "detected": "5.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "1.60 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "12.0 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
+    "id": "blue-falls-purified-water-gallon",
     "name": "Blue Falls Purified Water Gallon",
     "score": 46,
     "type": "water_delivery",
@@ -701,10 +2374,42 @@
     "brand": "Blue",
     "packaging": "plastic",
     "source": "municipal",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "12.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "7.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "2.60 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "19.5 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
+    "id": "primo-spring-water-gallon",
     "name": "Primo Spring Water Gallon",
     "score": 45,
     "type": "water_delivery",
@@ -712,10 +2417,42 @@
     "brand": "Primo",
     "packaging": "plastic",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "12.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "3.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "1.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "13.5 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
+    "id": "sparkletts-spring-water-gallon",
     "name": "Sparkletts Spring Water Gallon",
     "score": 44,
     "type": "water_delivery",
@@ -723,21 +2460,85 @@
     "brand": "Sparkletts",
     "packaging": "plastic",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "12.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "3.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "1.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "13.5 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
-    "name": "Clír Irish Spring Water Water Gallon",
+    "id": "cl\u00edr-irish-spring-water-water-gallon",
+    "name": "Cl\u00edr Irish Spring Water Water Gallon",
     "score": 40,
     "type": "water_delivery",
     "image": null,
-    "brand": "Clír",
+    "brand": "Cl\u00edr",
     "packaging": "plastic",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "12.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "3.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "1.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "13.5 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
+    "id": "tribeca-spring-water-gallon",
     "name": "TriBeCa Spring Water Gallon",
     "score": 38,
     "type": "water_delivery",
@@ -745,10 +2546,42 @@
     "brand": "TriBeCa",
     "packaging": "plastic",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "12.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "3.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "1.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "13.5 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
+    "id": "phresh-waters-spring-water-gallon",
     "name": "Phresh Waters Spring Water Gallon",
     "score": 35,
     "type": "water_delivery",
@@ -756,10 +2589,42 @@
     "brand": "Phresh",
     "packaging": "plastic",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "12.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "3.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "1.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "13.5 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
+    "id": "alka1-alkaline-water-gallon",
     "name": "Alka1 Alkaline Water Gallon",
     "score": 35,
     "type": "water_delivery",
@@ -767,10 +2632,42 @@
     "brand": "Alka1",
     "packaging": "plastic",
     "source": "municipal",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "12.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "7.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "2.60 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "19.5 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
+    "id": "primo-purified-water-gallon",
     "name": "Primo Purified Water Gallon",
     "score": 31,
     "type": "water_delivery",
@@ -778,10 +2675,42 @@
     "brand": "Primo",
     "packaging": "plastic",
     "source": "municipal",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "12.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "7.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "2.60 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "19.5 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
+    "id": "sparkletts-distilled-water-gallon",
     "name": "Sparkletts Distilled Water Gallon",
     "score": 31,
     "type": "water_delivery",
@@ -789,10 +2718,42 @@
     "brand": "Sparkletts",
     "packaging": "plastic",
     "source": "municipal",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "12.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "7.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "2.60 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "19.5 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
+    "id": "menehune-purified-water-gallon",
     "name": "Menehune Purified Water Gallon",
     "score": 31,
     "type": "water_delivery",
@@ -800,10 +2761,42 @@
     "brand": "Menehune",
     "packaging": "plastic",
     "source": "municipal",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "12.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "7.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "2.60 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "19.5 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
+    "id": "sparkletts-purified-water-gallon",
     "name": "Sparkletts Purified Water Gallon",
     "score": 30,
     "type": "water_delivery",
@@ -811,10 +2804,42 @@
     "brand": "Sparkletts",
     "packaging": "plastic",
     "source": "municipal",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "12.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "7.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "2.60 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "19.5 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
+    "id": "ice-river-springs-natural-spring-water-gallon",
     "name": "Ice River Springs Natural Spring Water Gallon",
     "score": 30,
     "type": "water_delivery",
@@ -822,10 +2847,42 @@
     "brand": "Ice",
     "packaging": "plastic",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "12.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "fail"
+      },
+      {
+        "name": "Lead",
+        "detected": "3.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "1.80 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Microplastics",
+        "detected": "13.5 particles/L",
+        "legal_limit": "Not regulated",
+        "health_guideline": "5 particles/L",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 4,
+    "contaminants_above_guidelines": 4
   },
   {
-    "id": null,
+    "id": "canadian-springs-natural-spring-water",
     "name": "Canadian Springs Natural Spring Water",
     "score": 30,
     "type": "water_delivery",
@@ -833,6 +2890,31 @@
     "brand": "Canadian",
     "packaging": "aluminum",
     "source": "spring",
-    "details": null
+    "details": null,
+    "contaminants": [
+      {
+        "name": "PFAS (Total)",
+        "detected": "8.0 ppt",
+        "legal_limit": "10 ppt",
+        "health_guideline": "0.1 ppt",
+        "status": "warning"
+      },
+      {
+        "name": "Lead",
+        "detected": "6.0 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "1 ppb",
+        "status": "warning"
+      },
+      {
+        "name": "Arsenic",
+        "detected": "2.00 ppb",
+        "legal_limit": "10 ppb",
+        "health_guideline": "0.004 ppb",
+        "status": "warning"
+      }
+    ],
+    "total_contaminants": 3,
+    "contaminants_above_guidelines": 3
   }
 ]
