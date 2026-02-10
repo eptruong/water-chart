@@ -80,14 +80,31 @@ h1{font-size:1.8rem;text-align:center;color:#fff;margin-bottom:4px}
 .contaminant-table .over-limit{color:#f87171;font-weight:700}
 .contaminant-table .safe{color:#4ade80}
 .contaminant-table .beneficial{color:#60a5fa}
-.score-bar-wrap{display:flex;align-items:center;gap:8px;margin-bottom:6px}
-.score-bar-label{font-size:.72rem;color:#999;min-width:100px}
-.score-bar{flex:1;height:8px;border-radius:4px;background:#1e1e2e;overflow:hidden}
-.score-bar-fill{height:100%;border-radius:4px;transition:width .3s}
-.score-bar-val{font-size:.72rem;color:#fff;font-weight:600;min-width:40px;text-align:right}
 .source-link{display:inline-block;margin:4px 6px 4px 0;padding:4px 10px;background:#1a1a2e;border:1px solid #2a2a3e;border-radius:6px;color:#60a5fa;font-size:.72rem;text-decoration:none;transition:.2s}
 .source-link:hover{background:#1a2a4e;border-color:#3b82f6}
 .desc-text{font-size:.75rem;color:#888;line-height:1.5;margin-bottom:10px;font-style:italic}
+.summary-row{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.summary-pill{display:flex;align-items:center;gap:6px;padding:6px 14px;background:#14141f;border:1px solid #1e1e2e;border-radius:20px;font-size:.75rem;color:#ccc}
+.summary-pill .dot{width:8px;height:8px;border-radius:50%}
+.summary-pill .val{font-weight:700}
+.ing-card{background:#14141f;border:1px solid #1e1e2e;border-radius:10px;padding:12px 14px;margin-bottom:8px}
+.ing-card.over-limit{border-color:#5e1a1a}
+.ing-card-header{display:flex;justify-content:space-between;align-items:center}
+.ing-card-name{font-weight:700;font-size:.82rem;color:#fff}
+.ing-card-amount{font-size:.82rem;font-weight:600;color:#ccc}
+.ing-card-cat{font-size:.65rem;color:#666;margin-top:1px}
+.ing-card-desc{font-size:.72rem;color:#777;margin-top:6px;line-height:1.4}
+.risk-badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.65rem;font-weight:700}
+.risk-badge.danger{background:#3e0a0a;color:#f87171;border:1px solid #5e1a1a}
+.risk-badge.warning{background:#3e2e0a;color:#fbbf24;border:1px solid #5e4a1a}
+.risk-badge.safe{background:#0a2e1a;color:#4ade80;border:1px solid #1a5e3a}
+.mineral-card{background:#14141f;border:1px solid #1a3a1a;border-radius:10px;padding:10px 14px;margin-bottom:6px}
+.mineral-card-header{display:flex;justify-content:space-between;align-items:center}
+.mineral-card .ing-card-name{color:#86efac}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.info-box{background:#14141f;border:1px solid #1e1e2e;border-radius:8px;padding:10px 12px}
+.info-box .lbl{font-size:.72rem;font-weight:700;color:#fff}
+.info-box .val{font-size:.72rem;color:#888;margin-top:3px}
 .empty{text-align:center;color:#555;padding:40px;font-size:.9rem}
 .load-more{display:block;width:100%;padding:12px;background:#14141f;border:1px solid #2a2a3e;border-radius:10px;color:#60a5fa;font-size:.85rem;cursor:pointer;text-align:center;margin-top:10px}
 .load-more:hover{background:#1a2a4e;border-color:#3b82f6}
@@ -301,44 +318,95 @@ function renderCard(w, rank) {
   // Description
   const descHtml = w.description ? `<div class="desc-text">${w.description}</div>` : '';
 
-  // Score Breakdown bars
-  let breakdownHtml = '';
-  if (w.scoreBreakdown && w.scoreBreakdown.length) {
-    const bars = w.scoreBreakdown.map(sb => {
-      const pct = sb.max > 0 ? (sb.score / sb.max) * 100 : 0;
-      const barColor = pct >= 80 ? '#4ade80' : pct >= 50 ? '#fbbf24' : '#f87171';
-      return `<div class="score-bar-wrap" title="${sb.description || ''}">
-        <div class="score-bar-label">${sb.label}</div>
-        <div class="score-bar"><div class="score-bar-fill" style="width:${pct}%;background:${barColor}"></div></div>
-        <div class="score-bar-val">${sb.score}/${sb.max}</div>
-      </div>`;
-    }).join('');
-    breakdownHtml = `<div class="detail-section"><h4>📊 Score Breakdown</h4>${bars}</div>`;
+  // Summary row (like Oasis: Lab tested, Contaminants count, Nutrients, Microplastics)
+  let summaryHtml = '';
+  if (w.scoreBreakdown || w.ingredients) {
+    const pills = [];
+    // Lab tested
+    const labSb = (w.scoreBreakdown || []).find(s => s.id === 'untested_penalty');
+    if (labSb) {
+      const labTested = labSb.score === 0;
+      pills.push(`<div class="summary-pill"><div class="dot" style="background:${labTested ? '#4ade80' : '#f87171'}"></div>Lab tested <span class="val">${labTested ? 'Yes' : 'No'}</span></div>`);
+    }
+    // Contaminants count
+    if (w.contaminantCount != null) {
+      const cc = w.contaminantCount;
+      const clr = cc === 0 ? '#4ade80' : cc <= 3 ? '#fbbf24' : '#f87171';
+      pills.push(`<div class="summary-pill"><div class="dot" style="background:${clr}"></div>Contaminants <span class="val">${cc}</span></div>`);
+    }
+    // Nutrients
+    if (w.nutrientCount != null) {
+      pills.push(`<div class="summary-pill"><div class="dot" style="background:#60a5fa"></div>Nutrients <span class="val">${w.nutrientCount}</span></div>`);
+    }
+    // Microplastics
+    const mpSb = (w.scoreBreakdown || []).find(s => s.id === 'microplastics_penalty');
+    if (mpSb) {
+      const mpTested = mpSb.score === 0 || w.isMicroplasticsTested;
+      pills.push(`<div class="summary-pill"><div class="dot" style="background:${w.isMicroplasticsTested ? '#4ade80' : '#666'}"></div>Microplastics <span class="val">${w.isMicroplasticsTested ? 'Tested' : 'No'}</span></div>`);
+    }
+    summaryHtml = `<div class="summary-row">${pills.join('')}</div>`;
   }
 
-  // Ingredients / Contaminants table
-  let ingredientsHtml = '';
+  // Contaminant cards (Oasis style)
+  let contaminantsHtml = '';
+  let mineralsHtml = '';
+  let otherHtml = '';
   if (w.ingredients && w.ingredients.length) {
-    const contaminants = w.ingredients.filter(i => i.category && !['Minerals','Other'].includes(i.category));
+    const contaminants = w.ingredients.filter(i => i.isContaminant || (i.category && !['Minerals','Other'].includes(i.category)));
     const minerals = w.ingredients.filter(i => i.category === 'Minerals');
-    const other = w.ingredients.filter(i => !i.category || i.category === 'Other');
+    const other = w.ingredients.filter(i => !i.isContaminant && (!i.category || i.category === 'Other'));
 
-    function makeTable(items, title, icon) {
-      if (!items.length) return '';
-      const rows = items.map(i => {
+    if (contaminants.length) {
+      const cards = contaminants.map(i => {
         const amt = i.amount != null ? i.amount : '—';
         const unit = i.measure || '';
-        const limitVal = i.limit != null ? i.limit + ' ' + unit : '—';
-        const limitLabel = i.limitType === 'Health' ? ' <span class="cat" title="Health guideline (stricter than legal)">⚕️</span>' : '';
-        const overClass = (i.limit != null && i.amount != null && i.amount > i.limit) ? 'over-limit' : (i.is_beneficial ? 'beneficial' : 'safe');
-        const overBadge = (i.limit != null && i.amount != null && i.amount > i.limit) ? ' ⛔' : (i.limit != null && i.amount != null && i.amount > i.limit * 0.5) ? ' ⚠️' : '';
-        const sevDots = i.severity ? '🔴'.repeat(Math.min(i.severity, 5)) : '';
-        return `<tr><td>${i.name} <span class="cat">${i.category || ''}</span></td><td class="${overClass}">${amt} ${unit}${overBadge}</td><td>${limitVal}${limitLabel}</td></tr>`;
+        const overLimit = i.limit != null && i.amount != null && i.amount > i.limit;
+        const ratio = (i.limit != null && i.amount != null && i.limit > 0) ? (i.amount / i.limit) : null;
+        let badge = '';
+        if (overLimit && ratio) badge = `<span class="risk-badge danger">${ratio.toFixed(1)}x limit</span>`;
+        else if (i.limit != null && i.amount != null && ratio && ratio > 0.5) badge = `<span class="risk-badge warning">${Math.round(ratio * 100)}% of limit</span>`;
+        else if (i.limit != null && i.amount != null) badge = `<span class="risk-badge safe">Within limit</span>`;
+        const desc = i.desc ? `<div class="ing-card-desc">${i.desc}</div>` : '';
+        return `<div class="ing-card${overLimit ? ' over-limit' : ''}">
+          <div class="ing-card-header"><div><div class="ing-card-name">${i.name}</div><div class="ing-card-cat">${i.category || ''}</div></div><div style="text-align:right"><div class="ing-card-amount">${amt} ${unit}</div>${badge}</div></div>
+          ${desc}
+        </div>`;
       }).join('');
-      return `<div class="detail-section"><h4>${icon} ${title}</h4><table class="contaminant-table"><thead><tr><th>Substance</th><th>Amount</th><th>Limit</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+      contaminantsHtml = `<div class="detail-section"><h4>⚠️ Contaminants</h4>${cards}</div>`;
     }
 
-    ingredientsHtml = makeTable(contaminants, 'Contaminants Found', '⚠️') + makeTable(minerals, 'Minerals', '💎') + makeTable(other, 'Other', '📋');
+    if (minerals.length) {
+      const cards = minerals.map(i => {
+        const amt = i.amount != null ? i.amount : '—';
+        const unit = i.measure || '';
+        const desc = i.benefits || i.desc || '';
+        const descHtml2 = desc ? `<div class="ing-card-desc">${desc.substring(0, 150)}</div>` : '';
+        return `<div class="mineral-card"><div class="mineral-card-header"><div><div class="ing-card-name">${i.name}</div></div><div class="ing-card-amount">${amt} ${unit}</div></div>${descHtml2}</div>`;
+      }).join('');
+      mineralsHtml = `<div class="detail-section"><h4>💎 Ingredients & Minerals</h4>${cards}</div>`;
+    }
+
+    if (other.length) {
+      const cards = other.map(i => {
+        const amt = i.amount != null ? i.amount : '—';
+        const unit = i.measure || '';
+        const limitInfo = i.limit != null ? ` (limit: ${i.limit} ${unit})` : '';
+        return `<div class="ing-card"><div class="ing-card-header"><div class="ing-card-name">${i.name}</div><div class="ing-card-amount">${amt} ${unit}${limitInfo}</div></div></div>`;
+      }).join('');
+      otherHtml = `<div class="detail-section"><h4>📋 Other</h4>${cards}</div>`;
+    }
+  }
+
+  // Info grid (Water source, Treatment, TDS, pH - like Oasis)
+  let infoGridHtml = '';
+  const infoItems = [];
+  if (w.source) infoItems.push({lbl: 'Water Source', val: w.source + (w.waterSource ? ' (' + w.waterSource.replace(/_/g, ' ') + ')' : '')});
+  else if (w.waterSource) infoItems.push({lbl: 'Water Source', val: w.waterSource.replace(/_/g, ' ')});
+  if (w.treatment && w.treatment !== 'Unknown') infoItems.push({lbl: 'Treatment Process', val: w.treatment});
+  if (w.tds != null) infoItems.push({lbl: 'TDS', val: w.tds + ' ppm'});
+  if (w.ph != null) infoItems.push({lbl: 'pH', val: String(w.ph)});
+  if (infoItems.length) {
+    infoGridHtml = `<div class="info-grid">${infoItems.map(i => `<div class="info-box"><div class="lbl">${i.lbl}</div><div class="val">${i.val}</div></div>`).join('')}</div>`;
   }
 
   // Sources / Lab reports
@@ -347,14 +415,8 @@ function renderCard(w, rank) {
     const links = w.sources.map(s =>
       `<a href="${s.url}" class="source-link" target="_blank" rel="noopener">📄 ${s.label || 'Lab Report'}</a>`
     ).join('');
-    sourcesHtml = `<div class="detail-section"><h4>🔬 Sources & Lab Reports</h4>${links}</div>`;
+    sourcesHtml = `<div class="detail-section"><h4>🔬 Sources</h4>${links}</div>`;
   }
-
-  // Water source info
-  const sourceLocHtml = w.source ? `<div class="detail-source"><strong>📍 Water Source:</strong> ${w.source}${w.waterSource ? ' (' + w.waterSource.replace(/_/g, ' ') + ')' : ''}</div>` : (w.waterSource ? `<div class="detail-source"><strong>📍 Source Type:</strong> ${w.waterSource.replace(/_/g, ' ')}</div>` : '');
-
-  // Treatment info
-  const treatmentHtml = w.treatment && w.treatment !== 'Unknown' ? `<div class="detail-source"><strong>⚙️ Treatment:</strong> ${w.treatment}</div>` : '';
 
   const hasAnyDetail = details.length || w.scoreBreakdown || (w.ingredients && w.ingredients.length) || (w.sources && w.sources.length) || w.source || w.description;
   const noDataHtml = !hasAnyDetail ? '<div style="color:#555;font-size:.8rem;text-align:center;padding:20px">No detailed data available for this product yet.</div>' : '';
@@ -384,10 +446,11 @@ function renderCard(w, rank) {
     ${w.imageUrl ? `<div style="text-align:center;margin-bottom:12px"><img src="${w.imageUrl}" alt="${w.name}" style="max-height:140px;border-radius:10px;object-fit:contain" loading="lazy"></div>` : ''}
     ${descHtml}
     ${overviewHtml}
-    ${breakdownHtml}
-    ${ingredientsHtml}
-    ${sourceLocHtml}
-    ${treatmentHtml}
+    ${summaryHtml}
+    ${contaminantsHtml}
+    ${mineralsHtml}
+    ${otherHtml}
+    ${infoGridHtml}
     ${sourcesHtml}
     ${noDataHtml}
   </div>`;
